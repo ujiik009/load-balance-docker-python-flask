@@ -7,7 +7,8 @@ services:
     depends_on:
       - flask-api-service
     ports:
-      - "80:4000"
+      - "80:80"
+      - "443:443"
   flask-api-service:
     build: "../flask-api-service"
       # ... other environment variables

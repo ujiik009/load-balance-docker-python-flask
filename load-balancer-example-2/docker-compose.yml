@@ -8,23 +8,34 @@ services:
       - flask-api-service-1
       - flask-api-service-2
       - flask-api-service-3
+      - flask-api-service-4
     ports:
       - "80:4000"
   flask-api-service-1:
+    cpus: 0.5
     build: "../flask-api-service"
     hostname: flask-api-service-1
       # ... other environment variables
     ports:
       - "5000"
   flask-api-service-2:
+    cpus: 0.5
     build: "../flask-api-service"
     hostname: flask-api-service-2
       # ... other environment variables
     ports:
       - "5000"
   flask-api-service-3:
+    cpus: 0.5
     build: "../flask-api-service"
     hostname: flask-api-service-3
+      # ... other environment variables
+    ports:
+      - "5000"
+  flask-api-service-4:
+    cpus: 0.5
+    build: "../flask-api-service"
+    hostname: flask-api-service-4
       # ... other environment variables
     ports:
       - "5000"
