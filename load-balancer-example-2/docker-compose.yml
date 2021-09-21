@@ -1,0 +1,30 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx-load-balancer/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - flask-api-service-1
+      - flask-api-service-2
+      - flask-api-service-3
+    ports:
+      - "80:4000"
+  flask-api-service-1:
+    build: "../flask-api-service"
+    hostname: flask-api-service-1
+      # ... other environment variables
+    ports:
+      - "5000"
+  flask-api-service-2:
+    build: "../flask-api-service"
+    hostname: flask-api-service-2
+      # ... other environment variables
+    ports:
+      - "5000"
+  flask-api-service-3:
+    build: "../flask-api-service"
+    hostname: flask-api-service-3
+      # ... other environment variables
+    ports:
+      - "5000"

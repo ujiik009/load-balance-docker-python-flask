@@ -1,0 +1,1 @@
+docker-compose up -d --force-recreate --scale flask-api-service=3

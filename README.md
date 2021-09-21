@@ -25,3 +25,10 @@ export FLASK_APP=start.py
 flask run
 
 ```
+
+### Docker command
+
+cd ${root_path_project}
+
+// scale service to 3 instant 
+docker-compose up -d --force-recreate --scale flask-api-service=3
